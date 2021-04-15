@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:	Woo Pays
-Plugin URI:		https://artevio.com
+Plugin URI:		https://github.com/artevio/woo-pays
 Description:	Pays.cz payment gateway for WooCommerce
 Version:		1.0.1
 Author:			Artevio
