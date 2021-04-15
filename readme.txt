@@ -26,9 +26,9 @@ For using this plugin please register new Payment Gateway first here: https://ww
 == Installation ==
 
 1. Upload `wc-pays` folder to the `/wp-content/plugins/` directory or install the plugin from the WordPress plugin repository.
-1. Activate the plugin through the "Plugins" menu in WordPress.
-1. Go to the setting via  Plugins > Payment Gateway for Pays.cz on WooCommerce > Settings.
-1. Enable and configure modules.
+2. Activate the plugin through the "Plugins" menu in WordPress.
+3. Go to the setting via  Plugins > Payment Gateway for Pays.cz on WooCommerce > Settings.
+4. Enable and configure the gateway.
 
 == Frequently Asked Questions ==
 
