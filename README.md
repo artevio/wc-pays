@@ -1,6 +1,6 @@
-# WC Pays
+# Payment Gateway for Pays.cz on WooCommerce
 Contributors: [Artevio](https://artevio.com), [WPify](https://wpify.io) \
-Plugin Name: WC Pays\
+Plugin Name: Payment Gateway for Pays.cz on WooCommerce\
 Plugin URI: https://github.com/artevio/wc-pays \
 Tags: WooCommerce, Czech, WPify, Artevio\
 Author: Artevio\

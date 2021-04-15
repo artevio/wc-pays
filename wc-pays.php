@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name:	WC Pays
+Plugin Name:	Payment Gateway for Pays.cz on WooCommerce
 Plugin URI:		https://github.com/artevio/wc-pays
 Description:	Pays.cz payment gateway for WooCommerce
 Version:		1.0.1
