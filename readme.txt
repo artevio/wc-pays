@@ -1,7 +1,7 @@
-=== Woo Pays ===
+=== WC Pays ===
 Contributors: artevio, wpify
-Plugin Name: Woo Pays
-Plugin URI: https://github.com/artevio/woocommerce-pays
+Plugin Name: WC Pays
+Plugin URI: https://github.com/artevio/wc-pays
 Tags: WooCommerce, Czech, WPify, Artevio
 Author: Artevio
 Author URI: https://artevio.com
@@ -25,7 +25,7 @@ For using this plugin please register new Payment Gateway first here: https://ww
 
 == Installation ==
 
-1. Upload `woocommerce-pays` folder to the `/wp-content/plugins/` directory or install the plugin from the WordPress plugin repository.
+1. Upload `wc-pays` folder to the `/wp-content/plugins/` directory or install the plugin from the WordPress plugin repository.
 1. Activate the plugin through the "Plugins" menu in WordPress.
 1. Go to the setting via  Plugins > WooCommerce Pays > Settings.
 1. Enable and configure modules.
@@ -58,7 +58,7 @@ We are continually working on adding new modules - we will add some of them to t
 
 = I found a bug, what should I do? =
 
-Drop us a message in the support section, or feel free to submit a pull request in the [plugin repository](https://github.com/artevio/woocommerce-pays).
+Drop us a message in the support section, or feel free to submit a pull request in the [plugin repository](https://github.com/artevio/wc-pays).
 
 = Who is behind the plugin? =
 

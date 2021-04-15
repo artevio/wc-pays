@@ -38,8 +38,8 @@ function artevio_wc_pays_activation() {
 	 * Gateway uses this page as fallback when error with return url.
 	 */
 	$page_success_id = artevio_wc_create_page(
-		_x( 'Payment Successful', 'Page Title', 'woo-pays' ),
-		_x( 'Payment was successful. You will receive all details within 24 hours on your e-mail. If this does not happen, contact us.', 'Page Content', 'woo-pays' ),
+		_x( 'Payment Successful', 'Page Title', 'wc-pays' ),
+		_x( 'Payment was successful. You will receive all details within 24 hours on your e-mail. If this does not happen, contact us.', 'Page Content', 'wc-pays' ),
 		'payment-success'
 	);
 
@@ -48,8 +48,8 @@ function artevio_wc_pays_activation() {
 	 * Gateway uses this page as fallback when error with return url.
 	 */
 	$page_error_id = artevio_wc_create_page(
-		_x( 'Payment Error', 'Page Title', 'woo-pays' ),
-		_x( 'There was an error with your payment. Please contact us.', 'Page Content', 'woo-pays' ),
+		_x( 'Payment Error', 'Page Title', 'wc-pays' ),
+		_x( 'There was an error with your payment. Please contact us.', 'Page Content', 'wc-pays' ),
 		'payment-error'
 	);
 
@@ -59,8 +59,8 @@ function artevio_wc_pays_activation() {
 	// Set default settings.
 	$new_options = array(
 		'enabled'          => 'yes',
-		'title'            => _x( 'Pays.cz', 'Gateway Title', 'woo-pays' ),
-		'description'      => _x( 'Pay by credit card, fast bank transfer or QR code via the Pays.cz payment gateway.', 'Gateway Description', 'woo-pays' ),
+		'title'            => _x( 'Pays.cz', 'Gateway Title', 'wc-pays' ),
+		'description'      => _x( 'Pay by credit card, fast bank transfer or QR code via the Pays.cz payment gateway.', 'Gateway Description', 'wc-pays' ),
 		'testmode'         => 'no',
 		'test_shop_id'     => '',
 		'test_api_key'     => '',

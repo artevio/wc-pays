@@ -29,8 +29,8 @@ function artevio_wc_pays_init_gateway_class() {
 			$this->id                 = 'artevio_pays'; // Payment gateway plugin ID.
 			$this->icon               = WC_PAYS_URL_ARTEVIO . 'assets/images/logo.png'; // URL of the icon that will be displayed on checkout page near your gateway name.
 			$this->has_fields         = false; // In case you need a custom credit card form.
-			$this->method_title       = _x( 'Pays.cz', 'Gateway Title', 'woo-pays' );
-			$this->method_description = _x( 'Receive payments by credit card, fast bank transfer or QR code via the Pays.cz payment gateway.', 'Gateway Admin Description', 'woo-pays' ); // Will be displayed on the options page.
+			$this->method_title       = _x( 'Pays.cz', 'Gateway Title', 'wc-pays' );
+			$this->method_description = _x( 'Receive payments by credit card, fast bank transfer or QR code via the Pays.cz payment gateway.', 'Gateway Admin Description', 'wc-pays' ); // Will be displayed on the options page.
 
 			/*
 			 * Gateways can support subscriptions, refunds, saved payment methods,
@@ -72,82 +72,82 @@ function artevio_wc_pays_init_gateway_class() {
 		public function init_form_fields() {
 
 			// Mail data.
-			$body    = _x( 'We are sending communication addresses.', 'Gateway settings Email body', 'woo-pays' ) . "\n\n" .
-					_x( 'Payment confirmation URL:', 'Gateway settings Email body', 'woo-pays' ) . ' ' . get_site_url( null, 'wc-api/pays-payment' ) . "\n" .
-					_x( 'Successful payment page:', 'Gateway settings Email body', 'woo-pays' ) . ' ' . get_permalink( $this->success_page ) . "\n" .
-					_x( 'Incorrect payment page:', 'Gateway settings Email body', 'woo-pays' ) . ' ' . get_permalink( $this->error_page );
-			$subject = _x( 'E-shop settings', 'Gateway settings Email subject', 'woo-pays' ) . ' ' . _x( 'Merchant:', 'Gateway settings Email subject', 'woo-pays' ) . $this->merchant_id . ' ' . _x( 'Shop:', 'Gateway settings Email subject', 'woo-pays' ) . $this->shop_id;
+			$body    = _x( 'We are sending communication addresses.', 'Gateway settings Email body', 'wc-pays' ) . "\n\n" .
+					_x( 'Payment confirmation URL:', 'Gateway settings Email body', 'wc-pays' ) . ' ' . get_site_url( null, 'wc-api/pays-payment' ) . "\n" .
+					_x( 'Successful payment page:', 'Gateway settings Email body', 'wc-pays' ) . ' ' . get_permalink( $this->success_page ) . "\n" .
+					_x( 'Incorrect payment page:', 'Gateway settings Email body', 'wc-pays' ) . ' ' . get_permalink( $this->error_page );
+			$subject = _x( 'E-shop settings', 'Gateway settings Email subject', 'wc-pays' ) . ' ' . _x( 'Merchant:', 'Gateway settings Email subject', 'wc-pays' ) . $this->merchant_id . ' ' . _x( 'Shop:', 'Gateway settings Email subject', 'wc-pays' ) . $this->shop_id;
 			$body    = rawurlencode( htmlspecialchars_decode( $body ) );
 			$subject = rawurlencode( htmlspecialchars_decode( $subject ) );
 
 			$this->form_fields = array(
 				'enabled'          => array(
-					'title'       => _x( 'Enable/Disable', 'Gateway settings Enabled title', 'woo-pays' ),
-					'label'       => _x( 'Enable Pays.cz Gateway', 'Gateway settings Enabled label', 'woo-pays' ),
+					'title'       => _x( 'Enable/Disable', 'Gateway settings Enabled title', 'wc-pays' ),
+					'label'       => _x( 'Enable Pays.cz Gateway', 'Gateway settings Enabled label', 'wc-pays' ),
 					'type'        => 'checkbox',
 					'description' => '',
 					'default'     => 'no',
 				),
 				'title'            => array(
-					'title'       => _x( 'Title', 'Gateway settings Title title', 'woo-pays' ),
-					'description' => _x( 'This controls the title which the user sees during checkout.', 'Gateway settings Title label', 'woo-pays' ),
-					'default'     => _x( 'Pays.cz', 'Gateway settings Title default', 'woo-pays' ),
+					'title'       => _x( 'Title', 'Gateway settings Title title', 'wc-pays' ),
+					'description' => _x( 'This controls the title which the user sees during checkout.', 'Gateway settings Title label', 'wc-pays' ),
+					'default'     => _x( 'Pays.cz', 'Gateway settings Title default', 'wc-pays' ),
 					'type'        => 'text',
 					'desc_tip'    => true,
 				),
 				'description'      => array(
-					'title'       => _x( 'Description', 'Gateway settings Description title', 'woo-pays' ),
-					'description' => _x( 'This controls the description which the user sees during checkout.', 'Gateway settings Description description', 'woo-pays' ),
-					'default'     => _x( 'Pay with your credit card, quick bank transfer or QR code via Pays.cz payment gateway.', 'Gateway settings Description default', 'woo-pays' ),
+					'title'       => _x( 'Description', 'Gateway settings Description title', 'wc-pays' ),
+					'description' => _x( 'This controls the description which the user sees during checkout.', 'Gateway settings Description description', 'wc-pays' ),
+					'default'     => _x( 'Pay with your credit card, quick bank transfer or QR code via Pays.cz payment gateway.', 'Gateway settings Description default', 'wc-pays' ),
 					'type'        => 'textarea',
 				),
 				'testmode'         => array(
-					'title'       => _x( 'Test mode', 'Gateway settings Test Mode title', 'woo-pays' ),
-					'label'       => _x( 'Enable Test Mode', 'Gateway settings Test Mode label', 'woo-pays' ),
-					'description' => _x( 'Place the payment gateway in test mode using test API keys.', 'Gateway settings Test Mode description', 'woo-pays' ),
+					'title'       => _x( 'Test mode', 'Gateway settings Test Mode title', 'wc-pays' ),
+					'label'       => _x( 'Enable Test Mode', 'Gateway settings Test Mode label', 'wc-pays' ),
+					'description' => _x( 'Place the payment gateway in test mode using test API keys.', 'Gateway settings Test Mode description', 'wc-pays' ),
 					'type'        => 'checkbox',
 					'default'     => 'yes',
 					'desc_tip'    => true,
 				),
 				'test_merchant_id' => array(
-					'title' => _x( 'Test Merchant ID', 'Gateway settings Test Merchant ID title', 'woo-pays' ),
+					'title' => _x( 'Test Merchant ID', 'Gateway settings Test Merchant ID title', 'wc-pays' ),
 					'type'  => 'number',
 				),
 				'test_shop_id'     => array(
-					'title' => _x( 'Test Shop ID', 'Gateway settings Test Shop ID title', 'woo-pays' ),
+					'title' => _x( 'Test Shop ID', 'Gateway settings Test Shop ID title', 'wc-pays' ),
 					'type'  => 'number',
 				),
 				'test_api_key'     => array(
-					'title' => _x( 'Test API Key', 'Gateway settings Test API Key title', 'woo-pays' ),
+					'title' => _x( 'Test API Key', 'Gateway settings Test API Key title', 'wc-pays' ),
 					'type'  => 'text',
 				),
 				'live_merchant_id' => array(
-					'title' => _x( 'Live Merchant ID', 'Gateway settings Live Merchant ID title', 'woo-pays' ),
+					'title' => _x( 'Live Merchant ID', 'Gateway settings Live Merchant ID title', 'wc-pays' ),
 					'type'  => 'number',
 				),
 				'live_shop_id'     => array(
-					'title' => _x( 'Live Shop ID', 'Gateway settings Live Shop ID title', 'woo-pays' ),
+					'title' => _x( 'Live Shop ID', 'Gateway settings Live Shop ID title', 'wc-pays' ),
 					'type'  => 'number',
 				),
 				'live_api_key'     => array(
-					'title' => _x( 'Live API Key', 'Gateway settings Live Shop ID title', 'woo-pays' ),
+					'title' => _x( 'Live API Key', 'Gateway settings Live Shop ID title', 'wc-pays' ),
 					'type'  => 'text',
 				),
 				'success_page'     => array(
-					'title'   => _x( 'Payment Success Page', 'Gateway settings Payment Success Page title', 'woo-pays' ),
+					'title'   => _x( 'Payment Success Page', 'Gateway settings Payment Success Page title', 'wc-pays' ),
 					'type'    => 'select',
 					'options' => $this->get_pages(),
 				),
 				'error_page'       => array(
-					'title'   => _x( 'Payment Error Page', 'Gateway settings Payment Error Page title', 'woo-pays' ),
+					'title'   => _x( 'Payment Error Page', 'Gateway settings Payment Error Page title', 'wc-pays' ),
 					'type'    => 'select',
 					'options' => $this->get_pages(),
 				),
 				'send_pays_urls'   => array(
-					'title'             => _x( 'Send URLs to Pays.cz', 'Gateway settings Pays URLs title', 'woo-pays' ),
+					'title'             => _x( 'Send URLs to Pays.cz', 'Gateway settings Pays URLs title', 'wc-pays' ),
 					'type'              => 'button',
-					'default'           => _x( 'Send needed details and URLs to Pays', 'Gateway settings Pays URLs button text', 'woo-pays' ),
-					'description'       => _x( 'Click on this button after you will save the settings.', 'Gateway settings Pays URLs description', 'woo-pays' ),
+					'default'           => _x( 'Send needed details and URLs to Pays', 'Gateway settings Pays URLs button text', 'wc-pays' ),
+					'description'       => _x( 'Click on this button after you will save the settings.', 'Gateway settings Pays URLs description', 'wc-pays' ),
 					'custom_attributes' => array(
 						'onclick' => 'window.location = "mailto:podpora@pays.cz&subject=' . $subject . '&body=' . $body . '";',
 					),
@@ -178,7 +178,7 @@ function artevio_wc_pays_init_gateway_class() {
 			if ( $this->description ) {
 				// Instructions for test mode.
 				if ( $this->testmode ) {
-					$this->description = _x( 'TEST PAYMENT:', 'Test Mode frontend gateway description', 'woo-pays' ) . ' ' . $this->description;
+					$this->description = _x( 'TEST PAYMENT:', 'Test Mode frontend gateway description', 'wc-pays' ) . ' ' . $this->description;
 					$this->description = trim( $this->description );
 				}
 				// Display the description with <p> tags etc.
@@ -302,7 +302,7 @@ function artevio_wc_pays_init_gateway_class() {
 
 				// If different amout or different currency.
 				if ( $order->get_total() !== $payment_ammount / $payment_base_units || $order->get_currency() !== $payment_currency ) {
-					$order->update_status( 'failed', _x( 'Wrong amount paid.', 'Note about wrong payment', 'woo-pays' ) );
+					$order->update_status( 'failed', _x( 'Wrong amount paid.', 'Note about wrong payment', 'wc-pays' ) );
 
 					// Payment status 3 = order completed.
 				} elseif ( 3 === $payment_status ) {
@@ -320,7 +320,7 @@ function artevio_wc_pays_init_gateway_class() {
 
 			// Create debug data array.
 			$debug_data = array(
-				'source'       => 'woo-pays',
+				'source'       => 'wc-pays',
 				'payment_hash' => $payment_hash,
 				'compare_hash' => $compare_hash,
 			);

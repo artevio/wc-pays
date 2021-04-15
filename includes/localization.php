@@ -15,6 +15,6 @@
  * Load plugin textdomain
  */
 function artevio_wc_pays_load_textdomain_action() {
-	load_plugin_textdomain( 'woo-pays', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'wc-pays', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'artevio_wc_pays_load_textdomain_action' );

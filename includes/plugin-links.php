@@ -24,8 +24,8 @@ function artevio_wc_pays_action_links( $links_array ) {
 	// Add links at the beginning.
 	array_unshift(
 		$links_array,
-		'<a href="' . $setings_url . '">' . _x( 'Settings', 'Plugins screen: Settings link', 'woo-pays' ) . '</a>',
-		'<a href="' . $logs_url . '">' . _x( 'Logs', 'Plugins screen: Logs link', 'woo-pays' ) . '</a>'
+		'<a href="' . $setings_url . '">' . _x( 'Settings', 'Plugins screen: Settings link', 'wc-pays' ) . '</a>',
+		'<a href="' . $logs_url . '">' . _x( 'Logs', 'Plugins screen: Logs link', 'wc-pays' ) . '</a>'
 	);
 
 	return $links_array;
@@ -36,13 +36,13 @@ add_filter( 'plugin_action_links_' . WC_PAYS_PLUGIN_BASENAME_ARTEVIO, 'artevio_w
  * Docs and other links
  *
  * @param array  $links_array - array of links below the plugin description.
- * @param string $plugin_file_name - plugin folder and file name - woo-pays/woo-pays.php.
+ * @param string $plugin_file_name - plugin folder and file name - wc-pays/wc-pays.php.
  */
 function artevio_wc_pays_other_links( $links_array, $plugin_file_name ) {
 
 	if ( strpos( $plugin_file_name, WC_PAYS_BASENAME_ARTEVIO ) ) {
-		$links_array[] = '<a href="https://github.com/artevio/woo-pays" target="_blank">FAQ</a>';
-		$links_array[] = '<a href="https://github.com/artevio/woo-pays/issues" target="_blank">Support</a>';
+		$links_array[] = '<a href="https://github.com/artevio/wc-pays" target="_blank">FAQ</a>';
+		$links_array[] = '<a href="https://github.com/artevio/wc-pays/issues" target="_blank">Support</a>';
 	}
 
 	return $links_array;
