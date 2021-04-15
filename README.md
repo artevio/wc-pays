@@ -32,7 +32,7 @@ For using this plugin please register new Payment Gateway first here: https://ww
 
 ### How to view the payment confirmation webhook logs? ###
 
-Go to Plugins > WooCommerce Pays.cz > Logs. Then from the in the dropdown select logs starting with 'woocommerce-pays-' and click View.
+Go to Plugins > Payment Gateway for Pays.cz on WooCommerce > Logs. Then from the in the dropdown select logs starting with 'wc-pays-' and click View.
 
 ### Why did you create this plugin? ###
 
