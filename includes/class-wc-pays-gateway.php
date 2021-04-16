@@ -282,8 +282,8 @@ function artevio_wc_pays_init_gateway_class() {
 			$payment_order_number       = isset( $_GET['MerchantOrderNumber'] ) ? intval( $_GET['MerchantOrderNumber'] ) : 0;
 			$payment_status             = isset( $_GET['PaymentOrderStatusID'] ) ? intval( $_GET['PaymentOrderStatusID'] ) : 0;
 			$payment_currency           = isset( $_GET['CurrencyID'] ) ? sanitize_text_field( wp_unslash( $_GET['CurrencyID'] ) ) : '';
-			$payment_ammount            = isset( $_GET['Amount'] ) ? intval( $_GET['Amount'] ) : 0;
-			$payment_base_units         = isset( $_GET['CurrencyBaseUnits'] ) ? intval( $_GET['CurrencyBaseUnits'] ) : 0;
+			$payment_ammount            = isset( $_GET['Amount'] ) ? floatval( $_GET['Amount'] ) : 0;
+			$payment_base_units         = isset( $_GET['CurrencyBaseUnits'] ) ? floatval( $_GET['CurrencyBaseUnits'] ) : 0;
 			$payment_status_description = isset( $_GET['PaymentOrderStatusDescription'] ) ? sanitize_text_field( wp_unslash( $_GET['PaymentOrderStatusDescription'] ) ) : '';
 			$payment_hash               = isset( $_GET['hash'] ) ? sanitize_text_field( wp_unslash( $_GET['hash'] ) ) : '';
 
@@ -301,7 +301,7 @@ function artevio_wc_pays_init_gateway_class() {
 			if ( $payment_hash === $compare_hash ) {
 
 				// If different amout or different currency.
-				if ( $order->get_total() !== $payment_ammount / $payment_base_units || $order->get_currency() !== $payment_currency ) {
+				if ( floatval( $order->get_total() ) !== $payment_ammount / $payment_base_units || $order->get_currency() !== $payment_currency ) {
 					$order->update_status( 'failed', _x( 'Wrong amount paid.', 'Note about wrong payment', 'wc-pays' ) );
 
 					// Payment status 3 = order completed.
